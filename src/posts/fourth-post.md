@@ -1,9 +1,10 @@
 ---
-title: The Future of Blogging: Trends to Watch in 2024
-author: David
-date: 2024-04-08
+title: The Art of Crafting Engaging Blog Content
+author: Sarah
+date: 2024-01-10
+image: "./../images/blog-1.jpg"
 ---
 
 ## Introduction
 
-The blogging landscape is constantly evolving. Stay ahead of the curve by understanding the latest trends and how they will shape the future of blogging in 2024.
+Creating content that resonates with your audience is key to a successful blog. In this post, we'll explore strategies to craft engaging content that keeps readers coming back for more.
