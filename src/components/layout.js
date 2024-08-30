@@ -1,51 +1,92 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
+import React from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
+import { Link } from 'gatsby';
 
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Scotties';
+    src: url('./../../public/fonts/Scotties.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
-import Header from "./header"
-import "./layout.css"
+  body {
+font-family: cursive;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+`;
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
+const LayoutWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+`;
+
+const Header = styled.header`
+  background-color: #333;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: cursive;
+`;
+
+const Logo = styled.div`
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  gap: 2rem;
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #ffae42;
     }
-  `)
+  }
+`;
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
-}
+const Main = styled.main`
+  flex: 1;
+  padding: 2rem;
+`;
 
-export default Layout
+const Footer = styled.footer`
+  background-color: #333;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-family: cursive;
+`;
+
+const Layout = ({ children }) => (
+  <LayoutWrapper>
+    <GlobalStyle />
+    <Header>
+      <Logo>Chronicle Hub</Logo>
+      <Nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/contact">Contact</Link>
+      </Nav>
+    </Header>
+    <Main>
+      {children}
+    </Main>
+    <Footer>© 2024 Café Euphoria</Footer>
+  </LayoutWrapper>
+);
+
+export default Layout;
