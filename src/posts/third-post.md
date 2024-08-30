@@ -2,7 +2,7 @@
 title: How to Monetize Your Blog in 2024
 author: James
 date: 2024-02-05
-image: "./../images/blog-3.jpg"
+image: "/images/blog-3.jpg"
 ---
 
 ## Introduction
