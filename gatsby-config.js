@@ -1,24 +1,3 @@
-// // gatsby-config.js
-// module.exports = {
-//   siteMetadata: {
-//     title: `My Blog`,
-//     description: `A blog created with Gatsby and React.`,
-//     author: `Your Name`,
-//   },
-//   plugins: [
-//     `gatsby-plugin-react-helmet`,
-//     {
-//       resolve: `gatsby-source-filesystem`,
-//       options: {
-//         name: `posts`,
-//         path: `${__dirname}/src/posts/`, // Directory for Markdown files
-//       },
-//     },
-//     `gatsby-transformer-remark`,
-//     `gatsby-plugin-styled-components`,
-//   ],
-// };
-
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -34,8 +13,17 @@ module.exports = {
         path: `${__dirname}/src/posts/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/posts/images/`,
+      },
+    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
   ],
 }

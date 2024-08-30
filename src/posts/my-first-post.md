@@ -2,7 +2,7 @@
 title: The Art of Crafting Engaging Blog Content
 author: Sarah
 date: 2024-01-10
-image: "/images/blog-1.jpg"
+image: "./images/blog-1.jpg"
 ---
 
 ## Introduction

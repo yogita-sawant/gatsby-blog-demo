@@ -3,6 +3,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import styled from 'styled-components';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const Post = styled.div`
   max-width: 800px;
@@ -13,12 +14,12 @@ const Post = styled.div`
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
-  console.log("-=-=-=", post)
+  const image = getImage(post.frontmatter.image);
 
   return (
     <Layout>
       <Post>
-        {/* <img src={post.frontmatter.image} alt={post.frontmatter.title} /> */}
+        {image && <GatsbyImage image={image} alt={post.frontmatter.title} />}
         <h1>{post.frontmatter.title}</h1>
         <p>{post.frontmatter.date}</p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -33,6 +34,11 @@ export const query = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        image {
+          childImageSharp {
+            gatsbyImageData(width: 800, layout: CONSTRAINED)
+          }
+        }
       }
       html
     }
