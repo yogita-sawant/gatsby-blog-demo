@@ -27,13 +27,6 @@ module.exports = {
     author: `Your Name`,
   },
   plugins: [
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `images`,
-    //     path: `${__dirname}/src/images/`,
-    //   },
-    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -43,5 +36,6 @@ module.exports = {
     },
     `gatsby-transformer-remark`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-styled-components`,
   ],
 }
