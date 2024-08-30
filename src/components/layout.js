@@ -5,13 +5,13 @@ import { Link } from 'gatsby';
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Scotties';
-    src: url('./../../public/fonts/Scotties.ttf') format('truetype');
+    src: url('/fonts/BAMIDA.otf') format('truetype');
     font-weight: normal;
     font-style: normal;
   }
 
   body {
-font-family: cursive;
+   font-family: 'Scotties', 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
@@ -33,11 +33,11 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: cursive;
+  font-family: 'Scotties';
 `;
 
 const Logo = styled.div`
-  font-size: 1.5rem;
+  font-size: 3.5rem;
   font-weight: bold;
   letter-spacing: 2px;
 `;
@@ -49,7 +49,7 @@ const Nav = styled.nav`
   a {
     color: white;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 3rem;
     transition: color 0.3s;
 
     &:hover {
@@ -60,7 +60,6 @@ const Nav = styled.nav`
 
 const Main = styled.main`
   flex: 1;
-  padding: 2rem;
 `;
 
 const Footer = styled.footer`
@@ -68,7 +67,8 @@ const Footer = styled.footer`
   color: white;
   padding: 1rem 2rem;
   text-align: center;
-  font-family: cursive;
+  font-family: 'Scotties';
+  font-size:2rem;
 `;
 
 const Layout = ({ children }) => (

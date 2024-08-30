@@ -9,7 +9,8 @@ const Post = styled.div`
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
-  font-family: cursive;
+  font-size: 1.7rem;
+  font-family: 'Scotties';
 `;
 
 const BlogPost = ({ data }) => {
