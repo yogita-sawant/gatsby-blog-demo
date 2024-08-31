@@ -11,10 +11,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-   font-family: 'Scotties', 'Arial', sans-serif;
+    font-family: 'Scotties', 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
     background-color: #f7f7f7;
     color: #333;
   }
@@ -23,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
 const LayoutWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Full viewport height */
+  min-height: 100vh;
 `;
 
 const Header = styled.header`
@@ -34,12 +33,26 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   font-family: 'Scotties';
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1rem;
+  }
 `;
 
 const Logo = styled.div`
   font-size: 3.5rem;
   font-weight: bold;
   letter-spacing: 2px;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
 `;
 
 const Nav = styled.nav`
@@ -49,17 +62,41 @@ const Nav = styled.nav`
   a {
     color: white;
     text-decoration: none;
-    font-size: 3rem;
+    font-size: 1.5rem;
     transition: color 0.3s;
 
     &:hover {
       color: #ffae42;
     }
   }
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    a {
+      font-size: 1rem;
+    }
+  }
 `;
 
 const Main = styled.main`
   flex: 1;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+  }
 `;
 
 const Footer = styled.footer`
@@ -68,7 +105,16 @@ const Footer = styled.footer`
   padding: 1rem 2rem;
   text-align: center;
   font-family: 'Scotties';
-  font-size:2rem;
+  font-size: 2rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
 `;
 
 const Layout = ({ children }) => (
