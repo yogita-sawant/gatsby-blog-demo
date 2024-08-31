@@ -1,14 +1,9 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Link } from 'gatsby';
+import './../css/custom.css';
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'Scotties';
-    src: url('/fonts/BAMIDA.otf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
 
   body {
     font-family: 'Scotties', 'Arial', sans-serif;
